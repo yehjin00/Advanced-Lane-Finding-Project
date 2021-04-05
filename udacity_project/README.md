@@ -114,10 +114,6 @@ The'polyfit_using_prev_fit' function basically does the same thing, but it allev
 
 #### 5. Describe how you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-The radius of curvature is based upon [this website](http://www.intmath.com/applications-differentiation/8-radius-curvature.php) and calculated in the code cell titled "Radius of Curvature and Distance from Lane Center Calculation" using this line of code (altered for clarity):
-```
-curve_radius = ((1 + (2*fit[0]*y_0*y_meters_per_pixel + fit[1])**2)**1.5) / np.absolute(2*fit[0])
-```
 In this example, `fit[0]` is the first coefficient (the y-squared coefficient) of the second order polynomial fit, and `fit[1]` is the second (y) coefficient. `y_0` is the y position within the image upon which the curvature calculation is based (the bottom-most y - the position of the car in the image - was chosen). `y_meters_per_pixel` is the factor used for converting from pixels to meters.
 
 The position of the vehicle with respect to the center of the lane is calculated with the following lines of code:
